@@ -238,11 +238,17 @@ header .submenu:hover #cart::-webkit-scrollbar-thumb:hover {background: #555;}
 /*
 * Notification
 */
-#notification_container {
+.animation-notification {
+  transition-duration: 2s;
+  transition-timing-function: ease-out;
+}
+
+#notification_column {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 40px;
   right: 25px;
-
   width: 200px;
   height: auto;
 }
