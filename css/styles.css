@@ -278,3 +278,9 @@ footer {
   display: block;
   margin-top: 50px;
 }
+
+.red {
+  font-weight: 900;
+  font-size: 20px;
+  color: red;
+}
