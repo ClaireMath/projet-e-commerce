@@ -7,8 +7,6 @@ function saveContentPanier() {
     localStorage.setItem("panier", stringifyCourses)
 }
 
-console.log()
-
 function displayPanier() {
 
     const listParentPanier = document.querySelector("tbody");
@@ -67,3 +65,27 @@ function displayPanier() {
 }
 
 displayPanier();
+
+const input = document.querySelector("input");
+
+const listArticles = document.querySelectorAll('.course__item');
+
+const listTitles = document.querySelectorAll('h4');
+
+input.addEventListener('keyup', searchArticle);
+
+function searchArticle() {
+    const filter = input.value;
+
+    for (i = 0; i < listArticles.length; i++) {
+
+        titleValue = listTitles[i].innerText;
+
+        if (titleValue.indexOf(filter) > -1) {
+            listArticles[i].style.display = "flex";
+        } else {
+            listArticles[i].style.display = "none";
+        }
+
+    }
+}
