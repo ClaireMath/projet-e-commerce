@@ -83,8 +83,9 @@ for (let i = 0; i < cartes.length; i++) {
       td4Remove.addEventListener("click", removeFromCart);
     }
     function removeFromCart(e) {
-        myXremoveParent = e.target.parentElement;
-        newLine.remove();
+        console.log(td4Remove);
+         e.target.parentElement.remove();
+        // newLine;
       }
     
     // je créé la pop-up pour confirmer l'ajout de l'article :

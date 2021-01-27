@@ -283,4 +283,5 @@ footer {
   font-weight: 900;
   font-size: 20px;
   color: red;
+  cursor: pointer;
 }
