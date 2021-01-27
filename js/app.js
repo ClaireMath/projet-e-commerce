@@ -14,6 +14,14 @@ const listArticles = document.querySelectorAll('.course__item');
 
 const listTitles = document.querySelectorAll('h4');
 
+const listImg = document.querySelectorAll('.course_img > img');
+
+const initialPrice = document.querySelectorAll('.price');
+
+const listPrice = document.querySelectorAll('.discount');
+
+const listStock = document.querySelectorAll('.stock');
+
 function saveContentPanier() {
 
     localStorage.setItem("panier", stringifyCourses)
@@ -135,3 +143,21 @@ function deleteArticleNotification(productTitle) {
     setTimeout(function () { testNotif.style.transform = "translateX(50em)"; }, 3000);
     setTimeout(function () { testNotif.style.display = "none"; }, 5000);
 }
+
+function generateDynamicHTMLJson() {
+
+    let a;
+
+    for (let i = 0; i < listTitles.length; i++) {
+        a = i + 1;
+        listTitles[i].textContent = parseCourses[a].title;
+        listImg[i].setAttribute("src", `img/courses/${parseCourses[a].img}`)
+        initialPrice[i].textContent = parseCourses[a].initial_price + " €";
+        listPrice[i].textContent = parseCourses[a].price + " €";
+        listStock[i].textContent = parseCourses[a].stock;
+    }
+
+
+}
+
+generateDynamicHTMLJson();
