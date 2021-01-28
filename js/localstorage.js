@@ -5,10 +5,8 @@ function saveContentPanier(product) {
     /* console.log(JSON.parse(localStorage.getItem(localStorage.key(0)))); */
 
 }
-
+const listParentPanier = document.querySelector("tbody");
 function displayPanier() {
-
-    const listParentPanier = document.querySelector("tbody");
 
     for (let i = 0; i < localStorage.length; i++) {
 
@@ -21,7 +19,6 @@ function displayPanier() {
         //Création du td img
         let tdImg = document.createElement('td');
         let contentImg = document.createElement('img');
-        console.log(value);
         contentImg.setAttribute("src", `${value.img}`)
 
         tdImg.appendChild(contentImg);
@@ -53,7 +50,21 @@ function displayPanier() {
         tdDelete.setAttribute("id", value.id);
 
         tr.appendChild(tdDelete);
+        tdDelete.addEventListener("click", removeFromCartLS);
+
     }
+
+    function removeFromCartLS(e) {
+        e.target.parentElement.remove();
+    }
+    btnViderPanier.addEventListener("click", viderPanierLS);
 }
+function viderPanierLS(e) {
+    allCartLinesLS = listParentPanier.querySelectorAll("tr");
+    for (let i = 0; i < allCartLinesLS.length; i++) {
+      allCartLinesLS[i].remove();
+    }
+    localStorage.clear();
+  }
 
 window.addEventListener('DOMContentLoaded', displayPanier);

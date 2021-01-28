@@ -1,3 +1,5 @@
+// je récupère le table body :
+let tbody = document.querySelector("tbody");
 // fonction pour ajouter au panier
 function addToCart(e) {
     e.preventDefault();
@@ -16,8 +18,7 @@ function addToCart(e) {
     courseName = divOfClickedBtnData.title;
     price = divOfClickedBtnData.price;
     idRemove = divOfClickedBtnData.id;
-    // je récupère le table body :
-    tbody = document.querySelector("tbody");
+    
     // je créé une nouvelle ligne
     newLine = document.createElement("tr");
     // je créé 5 table data :

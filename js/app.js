@@ -38,7 +38,6 @@ let btn,
   divOfClickedBtnData,
   btnViderPanier,
   allCartLines,
-  tbody,
   newLine,
   td0style,
   td1Name,
@@ -67,7 +66,6 @@ function removeFromCart(e) {
   };
   courseName = divOfClickedBtnData.title;
   e.target.parentElement.remove();
-  // newLine;
   deleteArticleNotification(courseName);
 }
 
