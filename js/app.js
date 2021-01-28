@@ -68,32 +68,3 @@ function removeFromCart(e) {
     // newLine;
     deleteArticleNotification(courseName);
 }
-
-// je créé la pop-up pour confirmer l'ajout de l'article :
-// popUp = document.createElement("p");
-// popUpText = "Votre cours a bien été ajouté au panier!";
-// // je donne un contenu à ma popUp
-// popUp.textContent = popUpText;
-// // je lui donne une classe
-// popUp.setAttribute("class", "appearBriefly");
-
-// console.log("je suis dans la fonction addtocart");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
