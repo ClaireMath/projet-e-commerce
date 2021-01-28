@@ -12,6 +12,7 @@ idRemove,
 img,
   divOfClickedBtn,
   divOfClickedBtnData,
+  allTableLines,
   tbody,
   newLine,
   td0style,
@@ -91,9 +92,12 @@ for (let i = 0; i < cartes.length; i++) {
       let btnViderPanier = document.getElementById("empty-cart");
       btnViderPanier.addEventListener("click",viderPanier);
       function viderPanier(e){
-        //let papa=e.target.parentElement;
-        //console.log(papa);
-        tbody.remove();
+          allTableLines = tbody.querySelectorAll("tr");
+          console.log(allTableLines);
+          for (let i = 0; i < allTableLines.length; i++) {
+                    allTableLines[i].remove();
+          }
+       
       }
       
     
