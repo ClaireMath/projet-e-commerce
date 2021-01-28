@@ -4,23 +4,23 @@ const parseCourses = JSON.parse(localStorage.getItem("panier"));
 
 const buttonNotif = document.getElementById("test-notif");
 
-const body = document.querySelector('body');
+const body = document.querySelector("body");
 
-const notificationColumn = document.getElementById('notification_column');
+const notificationColumn = document.getElementById("notification_column");
 
 const input = document.querySelector("input");
 
-const listArticles = document.querySelectorAll('.course__item');
+const listArticles = document.querySelectorAll(".course__item");
 
-const listTitles = document.querySelectorAll('h4');
+const listTitles = document.querySelectorAll("h4");
 
-const listImg = document.querySelectorAll('.course_img > img');
+const listImg = document.querySelectorAll(".course_img > img");
 
-const initialPrice = document.querySelectorAll('.price');
+const initialPrice = document.querySelectorAll(".price");
 
-const listPrice = document.querySelectorAll('.discount');
+const listPrice = document.querySelectorAll(".discount");
 
-const listStock = document.querySelectorAll('.stock');
+const listStock = document.querySelectorAll(".stock");
 
 const deleteButton = document.querySelectorAll('.red')
 
@@ -30,32 +30,34 @@ let cartes = document.querySelectorAll(".course__item");
 /* console.log(cartes); */
 
 let btn,
-    imageSrcValue,
-    srcOfImg,
-    courseName,
-    price,
-    idRemove,
-    img,
-    divOfClickedBtn,
-    divOfClickedBtnData,
-    tbody,
-    newLine,
-    td0style,
-    td1Name,
-    td2Price,
-    td3Qtity,
-    td4Remove,
-    popUp,
-    popUpText,
-    imgCarte,
-    myXremove;
+  imageSrcValue,
+  srcOfImg,
+  courseName,
+  price,
+  idRemove,
+  img,
+  divOfClickedBtn,
+  divOfClickedBtnData,
+  btnViderPanier,
+  allCartLines,
+  tbody,
+  newLine,
+  td0style,
+  td1Name,
+  td2Price,
+  td3Qtity,
+  td4Remove,
+  popUp,
+  popUpText,
+  imgCarte,
+  myXremove;
 
 // Je boucle dans mes cartes
 for (let i = 0; i < cartes.length; i++) {
-    // pour chaque carte, je récupère le lien (a) et je le mets dans la variable btn
-    btn = cartes[i].querySelector("a");
-    // je mets un écouteur d'évènement sur mon lien qui lancera la fonction addToCart au click
-    btn.addEventListener("click", addToCart);
+  // pour chaque carte, je récupère le lien (a) et je le mets dans la variable btn
+  btn = cartes[i].querySelector("a");
+  // je mets un écouteur d'évènement sur mon lien qui lancera la fonction addToCart au click
+  btn.addEventListener("click", addToCart);
 }
 
 /* function removeFromCart(e) {
@@ -73,27 +75,13 @@ for (let i = 0; i < cartes.length; i++) {
 }
  */
 
-// je créé la pop-up pour confirmer l'ajout de l'article :
-// popUp = document.createElement("p");
-// popUpText = "Votre cours a bien été ajouté au panier!";
-// // je donne un contenu à ma popUp
-// popUp.textContent = popUpText;
-// // je lui donne une classe
-// popUp.setAttribute("class", "appearBriefly");
+btnViderPanier = document.getElementById("empty-cart");
+btnViderPanier.addEventListener("click", viderPanier);
 
-// console.log("je suis dans la fonction addtocart");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function viderPanier(e) {
+  //let papa=e.target.parentElement;
+  allCartLines = tbody.querySelectorAll("tr");
+  for (let i = 0; i < allCartLines.length; i++) {
+    allCartLines[i].remove();
+  }
+}
