@@ -1,12 +1,14 @@
 // je récupère le table body :
 let tbody = document.querySelector("tbody");
-// let mylocalStorage = localStorage.getItem()
+// je place un ecouteur d'evenement sur mon document au chargement de la page
 document.addEventListener("DOMContentLoaded", inciterAlaConso);
 
 function inciterAlaConso () {
+    // s'il y a du contenu dans mon local storage :
     if (Object.keys(localStorage).length > 0) {
     return  
 }
+// sinon, on envoie une alerte
  else {
     alert("Il n'est jamais trop tard pour apprendre, jetez un coup d'oeil à nos cours, il y en a forcément un fait pour vous !")
 }
@@ -23,7 +25,9 @@ function addToCart(e) {
         price: divOfClickedBtn.querySelector('.discount').textContent,
         id: divOfClickedBtn.querySelector('a').getAttribute('data-id')
     }
-    srcOfImg = divOfClickedBtnData.img; divOfClickedBtn.querySelector("figure");
+    // je récup tous mes élements ou attributs
+    srcOfImg = divOfClickedBtnData.img; 
+    divOfClickedBtn.querySelector("figure");
     img = document.createElement('img')
     img.setAttribute("src", srcOfImg);
     courseName = divOfClickedBtnData.title;
@@ -34,7 +38,6 @@ function addToCart(e) {
     newLine = document.createElement("tr");
     // je créé 5 table data :
     tdImg = document.createElement("td");
-
     td1Name = document.createElement("td");
     td2Price = document.createElement("td");
     td3Qtity = document.createElement("td");

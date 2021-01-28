@@ -58,8 +58,10 @@ for (let i = 0; i < cartes.length; i++) {
 }
 
 function removeFromCart(e) {
+    //boite de dialogue de type confirm :
     if ( confirm( "Etes-vous sûr de vouloir supprimer ce cours ?" ) ) {
         // Code à éxécuter si le l'utilisateur clique sur "OK"
+        //données de la div mère du bouton cliqué : 
     divOfClickedBtnData = {
     img: divOfClickedBtn.querySelector("img").src,
     title: divOfClickedBtn.querySelector("h4").textContent,
@@ -67,22 +69,28 @@ function removeFromCart(e) {
     id: divOfClickedBtn.querySelector("a").getAttribute("data-id"),
   };
   courseName = divOfClickedBtnData.title;
+  // on supprime l'élement parent de la cible de l'event (donc du bouton)
   e.target.parentElement.remove();
+  // on appel la fonction pour générer la popup
   deleteArticleNotification(courseName);
     } else {
         return
     }
   
 }
-
+// je récup mon bouton
 btnViderPanier = document.getElementById("empty-cart");
+// je lui mets un event au click
 btnViderPanier.addEventListener("click", viderPanier);
 
 function viderPanier(e) {
+    // boite de dialogue pour confirmer de vider le panier
     if ( confirm( "Etes-vous sûr de vouloir vider le panier ?" ) ) {
         // Code à éxécuter si le l'utilisateur clique sur "OK"
+  // je récup toutes les lignes de mon table body pour pouvoir boucler dedans :
   allCartLines = tbody.querySelectorAll("tr");
   for (let i = 0; i < allCartLines.length; i++) {
+      // je supprime chacune des lignes
     allCartLines[i].remove();
   }
 }
