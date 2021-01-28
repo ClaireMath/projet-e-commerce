@@ -22,6 +22,8 @@ const listPrice = document.querySelectorAll('.discount');
 
 const listStock = document.querySelectorAll('.stock');
 
+const deleteButton = document.querySelectorAll('.red')
+
 /* console.log(COURSES); */
 
 let cartes = document.querySelectorAll(".course__item");
@@ -56,7 +58,7 @@ for (let i = 0; i < cartes.length; i++) {
     btn.addEventListener("click", addToCart);
 }
 
-function removeFromCart(e) {
+/* function removeFromCart(e) {
     divOfClickedBtnData = {
         img: divOfClickedBtn.querySelector('img').src,
         title: divOfClickedBtn.querySelector('h4').textContent,
@@ -67,7 +69,9 @@ function removeFromCart(e) {
     e.target.parentElement.remove();
     // newLine;
     deleteArticleNotification(courseName);
+
 }
+ */
 
 // je créé la pop-up pour confirmer l'ajout de l'article :
 // popUp = document.createElement("p");
@@ -78,10 +82,6 @@ function removeFromCart(e) {
 // popUp.setAttribute("class", "appearBriefly");
 
 // console.log("je suis dans la fonction addtocart");
-
-
-
-
 
 
 
