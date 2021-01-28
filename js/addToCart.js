@@ -1,5 +1,16 @@
 // je récupère le table body :
 let tbody = document.querySelector("tbody");
+// let mylocalStorage = localStorage.getItem()
+document.addEventListener("DOMContentLoaded", inciterAlaConso);
+
+function inciterAlaConso () {
+    if (Object.keys(localStorage).length > 0) {
+    return  
+}
+ else {
+    alert("Il n'est jamais trop tard pour apprendre, jetez un coup d'oeil à nos cours, il y en a forcément un fait pour vous !")
+}
+}
 // fonction pour ajouter au panier
 function addToCart(e) {
     e.preventDefault();
