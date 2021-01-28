@@ -1,14 +1,18 @@
-function saveContentPanier() {
+function saveContentPanier(product) {
 
-    localStorage.setItem("panier", stringifyCourses)
+    localStorage.setItem(`product-${localStorage.length}`, product);
+
+    /* console.log(JSON.parse(localStorage.getItem(localStorage.key(0)))); */
+
 }
-
 
 function displayPanier() {
 
     const listParentPanier = document.querySelector("tbody");
 
-    for (const [key, value] of Object.entries(parseCourses)) {
+    for (let i = 0; i < localStorage.length; i++) {
+
+        let value = JSON.parse(localStorage.getItem(localStorage.key(i)));
 
         let tr = document.createElement('tr');
 
@@ -17,7 +21,7 @@ function displayPanier() {
         //Création du td img
         let tdImg = document.createElement('td');
         let contentImg = document.createElement('img');
-        contentImg.setAttribute("src", `img/courses/${value.img}`)
+        contentImg.setAttribute("src", `${value.img}`)
 
         tdImg.appendChild(contentImg);
 
@@ -25,38 +29,30 @@ function displayPanier() {
 
         //Création du td title
         let tdTitle = document.createElement('td');
-        let contentTitle = document.createElement('p');
-        contentTitle.textContent = value.title;
-
-        tdTitle.appendChild(contentTitle);
+        tdTitle.textContent = value.title;
 
         tr.appendChild(tdTitle);
 
         //Création du td price
         let tdPrice = document.createElement('td');
-        let contentPrice = document.createElement('p');
-        contentPrice.textContent = `${value.price}€`;
-
-        tdPrice.appendChild(contentPrice);
+        tdPrice.textContent = `${value.price}`;
 
         tr.appendChild(tdPrice);
 
         //Création du td price
         let tdQuantity = document.createElement('td');
-        let contentQuantity = document.createElement('p');
-        contentQuantity.textContent = `1`;
-
-        tdQuantity.appendChild(contentQuantity);
+        tdQuantity.textContent = `1`;
 
         tr.appendChild(tdQuantity);
 
         //Création du td delete
         let tdDelete = document.createElement('td');
-        let contentDelete = document.createElement('button');
-        contentDelete.textContent = `x`;
-
-        tdDelete.appendChild(contentDelete);
+        tdDelete.setAttribute("class", "red");
+        tdDelete.textContent = `X`;
+        tdDelete.setAttribute("id", value.id);
 
         tr.appendChild(tdDelete);
     }
 }
+
+window.addEventListener('DOMContentLoaded', displayPanier);

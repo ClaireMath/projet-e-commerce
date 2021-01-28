@@ -37,5 +37,3 @@ function deleteArticleNotification(productTitle) {
     setTimeout(function () { testNotif.style.transform = "translateX(50em)"; }, 3000);
     setTimeout(function () { testNotif.style.display = "none"; }, 5000);
 }
-
-document.getElementById("testButton").addEventListener('click', addArticleNotification)
