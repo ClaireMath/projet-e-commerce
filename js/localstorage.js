@@ -55,7 +55,14 @@ function displayPanier() {
     }
 
     function removeFromCartLS(e) {
+        if ( confirm( "Etes-vous sûr de vouloir supprimer ce cours ?" ) ) {
+            // Code à éxécuter si le l'utilisateur clique sur "OK"
         e.target.parentElement.remove();
+    } else {
+            // Code à éxécuter si l'utilisateur clique sur "Annuler" 
+        return
+        }
+        
     }
     btnViderPanier.addEventListener("click", viderPanierLS);
 }

@@ -58,7 +58,9 @@ for (let i = 0; i < cartes.length; i++) {
 }
 
 function removeFromCart(e) {
-  divOfClickedBtnData = {
+    if ( confirm( "Etes-vous sûr de vouloir supprimer ce cours ?" ) ) {
+        // Code à éxécuter si le l'utilisateur clique sur "OK"
+    divOfClickedBtnData = {
     img: divOfClickedBtn.querySelector("img").src,
     title: divOfClickedBtn.querySelector("h4").textContent,
     price: divOfClickedBtn.querySelector(".discount").textContent,
@@ -67,15 +69,24 @@ function removeFromCart(e) {
   courseName = divOfClickedBtnData.title;
   e.target.parentElement.remove();
   deleteArticleNotification(courseName);
+    } else {
+        return
+    }
+  
 }
 
 btnViderPanier = document.getElementById("empty-cart");
 btnViderPanier.addEventListener("click", viderPanier);
 
 function viderPanier(e) {
-  //let papa=e.target.parentElement;
+    if ( confirm( "Etes-vous sûr de vouloir vider le panier ?" ) ) {
+        // Code à éxécuter si le l'utilisateur clique sur "OK"
   allCartLines = tbody.querySelectorAll("tr");
   for (let i = 0; i < allCartLines.length; i++) {
     allCartLines[i].remove();
+  }
+}
+  else {
+      return
   }
 }
