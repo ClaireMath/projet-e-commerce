@@ -85,8 +85,17 @@ for (let i = 0; i < cartes.length; i++) {
     function removeFromCart(e) {
         console.log(td4Remove);
          e.target.parentElement.remove();
+
         // newLine;
       }
+      let btnViderPanier = document.getElementById("empty-cart");
+      btnViderPanier.addEventListener("click",viderPanier);
+      function viderPanier(e){
+        //let papa=e.target.parentElement;
+        //console.log(papa);
+        tbody.remove();
+      }
+      
     
     // je créé la pop-up pour confirmer l'ajout de l'article :
     // popUp = document.createElement("p");
