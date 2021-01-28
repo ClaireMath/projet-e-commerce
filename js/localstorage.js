@@ -21,6 +21,7 @@ function displayPanier() {
         //Création du td img
         let tdImg = document.createElement('td');
         let contentImg = document.createElement('img');
+        console.log(value);
         contentImg.setAttribute("src", `${value.img}`)
 
         tdImg.appendChild(contentImg);
