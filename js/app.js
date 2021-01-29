@@ -56,6 +56,7 @@ for (let i = 0; i < cartes.length; i++) {
     btn = cartes[i].querySelector("a");
     // je mets un écouteur d'évènement sur mon lien qui lancera la fonction addToCart au click
     btn.addEventListener("click", addToCart);
+
 }
 
 /* function removeFromCart(e) {

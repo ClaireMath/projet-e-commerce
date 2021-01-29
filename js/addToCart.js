@@ -12,8 +12,6 @@ function addToCart(e) {
         quantity: localStorage.getItem(divOfClickedBtn.querySelector('h4').textContent) ? JSON.parse(localStorage.getItem(divOfClickedBtn.querySelector('h4').textContent)).quantity + 1 : 1
     }
     srcOfImg = divOfClickedBtnData.img; divOfClickedBtn.querySelector("figure");
-    img = document.createElement('img')
-    img.setAttribute("src", srcOfImg);
     courseName = divOfClickedBtnData.title;
     price = divOfClickedBtnData.price;
     let quantity = divOfClickedBtnData.quantity;
@@ -25,6 +23,8 @@ function addToCart(e) {
         let tdQuantity = document.querySelector("#tdQuantity");
         tdQuantity.innerHTML = quantity;
     } else {
+        img = document.createElement('img')
+        img.setAttribute("src", srcOfImg);
         // je créé une nouvelle ligne
         newLine = document.createElement("tr");
         // je créé 5 table data :
