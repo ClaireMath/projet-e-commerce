@@ -5,6 +5,7 @@ function saveContentPanier(product) {
 }
 // je recup mon tbody
 const listParentPanier = document.querySelector("tbody");
+
 function displayPanier() {
     // je boucle dans le local storage
     for (let i = 0; i < localStorage.length; i++) {
@@ -18,6 +19,7 @@ function displayPanier() {
         //Création du td img
         let tdImg = document.createElement('td');
         let contentImg = document.createElement('img');
+        console.log(`source de l'image du local storage${value.img}`);
         contentImg.setAttribute("src", `${value.img}`)
 
         tdImg.appendChild(contentImg);

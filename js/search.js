@@ -8,7 +8,7 @@ function searchArticle() {
     for (i = 0; i < listArticles.length; i++) {
 
         // je recup le contenu de chacun des titres
-        titleValue = listTitles[i].innerText;
+        titleValue = listTitles[i].innerText.toUpperCase();
             // si c'est supérieur à -1 c'est que la valeur à eté trouvée, donc j'affiche la carte
         if (titleValue.indexOf(filter) > -1) {
             listArticles[i].style.display = "flex";

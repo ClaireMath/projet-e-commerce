@@ -26,10 +26,12 @@ function addToCart(e) {
         id: divOfClickedBtn.querySelector('a').getAttribute('data-id'),
         quantity: localStorage.getItem(divOfClickedBtn.querySelector('h4').textContent) ? JSON.parse(localStorage.getItem(divOfClickedBtn.querySelector('h4').textContent)).quantity + 1 : 1
     }
+    
     // je récup tous mes élements ou attributs
     srcOfImg = divOfClickedBtnData.img; 
     divOfClickedBtn.querySelector("figure");
-    img = document.createElement('img')
+    img = document.createElement('img');
+    // console.log(srcOfImg);
     img.setAttribute("src", srcOfImg);
     courseName = divOfClickedBtnData.title;
     price = divOfClickedBtnData.price;
@@ -74,32 +76,6 @@ function addToCart(e) {
         /* td4Remove.addEventListener("click", removeFromCart); */
     }
     
-    // je créé une nouvelle ligne
-    newLine = document.createElement("tr");
-    // je créé 5 table data :
-    tdImg = document.createElement("td");
-    td1Name = document.createElement("td");
-    td2Price = document.createElement("td");
-    td3Qtity = document.createElement("td");
-    td4Remove = document.createElement("td");
-    td4Remove.setAttribute("class", "red");
-
-    // je donne un contenu à mes td (pour l'instant en dur):
-    tdImg.appendChild(img);
-    td1Name.textContent = courseName;
-    td2Price.textContent = price;
-    td3Qtity.textContent = "1";
-    td4Remove.textContent = "X";
-    td4Remove.setAttribute("id", idRemove);
-    // j'ajoute mes cases à ma ligne
-    newLine.appendChild(tdImg);
-    newLine.appendChild(td1Name);
-    newLine.appendChild(td2Price);
-    newLine.appendChild(td3Qtity);
-    newLine.appendChild(td4Remove);
-
-    // j'ajoute ma ligne à mon table body
-    tbody.appendChild(newLine);
     // localStorage.setItem("article : ", "");
     td4Remove.addEventListener("click", removeFromCart);
 
@@ -107,8 +83,6 @@ function addToCart(e) {
 
     saveContentPanier(JSON.stringify(divOfClickedBtnData));
 }
-
-
 
 /* td4Remove.addEventListener("click", function removeFromCart3() {
 
