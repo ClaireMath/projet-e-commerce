@@ -63,6 +63,16 @@ function removeFromCart(e) {
     //boite de dialogue de type confirm :
     if ( confirm( "Etes-vous sûr de vouloir supprimer ce cours ?" ) ) {
         // Code à éxécuter si le l'utilisateur clique sur "OK"
+
+        courseName = this.parentElement.querySelector(".test").textContent;
+        if (value.quantity === 1) {
+                localStorage.removeItem(value.title);
+                this.parentElement.remove();
+              } else {
+                value.quantity = value.quantity - 1;
+                tdQuantity.innerText = value.quantity;
+                localStorage.setItem(value.title, JSON.stringify(value));
+              }
         //données de la div mère du bouton cliqué : 
     divOfClickedBtnData = {
     img: divOfClickedBtn.querySelector("img").src,
